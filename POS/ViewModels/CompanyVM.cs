@@ -4,7 +4,7 @@ using System.Text;
 
 namespace POS.ViewModels
 {
-    public class VendorVm
+    public class CompanyVm
     {
         public int CompanyId { get; set; }
         public string Name { get; set; }

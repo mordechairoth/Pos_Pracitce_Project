@@ -10,7 +10,7 @@ namespace POS.Repositories
 {
     public class CompanyRepository
     {
-        public IEnumerable<VendorVm> All()
+        public IEnumerable<CompanyVm> All()
         {
             IEnumerable<Companies> companies;
             using var connection = DbHelper.GetNewSqlConnection();
@@ -22,7 +22,7 @@ namespace POS.Repositories
             }
         }
 
-        public VendorVm Find(int id)
+        public CompanyVm Find(int id)
         {
             using var connection = DbHelper.GetNewSqlConnection();
             var company = connection.Query<Companies>(DbHelper.GetFindByColumnSqlString("Companies", "CompanyId", id.ToString()));
@@ -30,7 +30,7 @@ namespace POS.Repositories
                 throw new KeyNotFoundException($"No item with id {id} found in table {nameof(Companies)}.");
         }
 
-        public void Add(VendorVm companyVm)
+        public void Add(CompanyVm companyVm)
         {
             Companies company = CompanyVmToCompanies(companyVm);
 
@@ -48,7 +48,7 @@ namespace POS.Repositories
             connection.ExecuteScalar(deleteSqlCommand);
         }
 
-        public void Update(VendorVm companyVm)
+        public void Update(CompanyVm companyVm)
         {
             string updateSqlCommand = DbHelper.GetUpdateSqlString("Companies", "CompanyId", companyVm.CompanyId.ToString(), "Name",
                 "Description", "Address", "Address2","City", "State", "Zip", "Phone", "PhoneExtension", "Email");
@@ -58,11 +58,11 @@ namespace POS.Repositories
         }
 
         
-        private VendorVm CompaniesToCompanyVM(Companies companies)
+        private CompanyVm CompaniesToCompanyVM(Companies companies)
         {
             var companiesProperties = companies.GetType().GetProperties();
-            var companyVmPropertyNames = typeof(VendorVm).GetProperties().Select(p => p.Name);
-            VendorVm companyVm = new VendorVm();
+            var companyVmPropertyNames = typeof(CompanyVm).GetProperties().Select(p => p.Name);
+            CompanyVm companyVm = new CompanyVm();
 
             foreach (var property in companiesProperties)
             {
@@ -73,7 +73,7 @@ namespace POS.Repositories
             return companyVm;
         }
 
-        private Companies CompanyVmToCompanies(VendorVm companyVm)
+        private Companies CompanyVmToCompanies(CompanyVm companyVm)
         {
             var companyVmProperties = companyVm.GetType().GetProperties();
             Companies companies = new Companies();

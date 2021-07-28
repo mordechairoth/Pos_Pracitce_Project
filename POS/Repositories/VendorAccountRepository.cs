@@ -15,9 +15,10 @@ namespace POS.Repositories
 
             using var connection = DbHelper.GetNewSqlConnection();
             var insertSqlCommand = DbHelper.GetInsertSqlString("VendorAccounts", "VendorId", "AccountName", "AccountNumber", "CreditAmount",
-                                                                "Email", "City", "State", "Zip", "Phone", "PhoneExtension", "Email");
+                                                                "Email");
             connection.ExecuteScalar(insertSqlCommand, vendorAccount);
         }
+
         private VendorAccounts VendorAccountVmToVendorAccounts(VendorAccountVm vendorAccountVm)
         {
             var vendorVmProperties = vendorAccountVm.GetType().GetProperties();

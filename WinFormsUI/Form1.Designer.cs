@@ -31,8 +31,8 @@ namespace WinFormsUI
         {
             this.addVendorButton = new System.Windows.Forms.Button();
             this.OptionsGroupBox = new System.Windows.Forms.GroupBox();
-            this.addAccountButton = new System.Windows.Forms.Button();
             this.newOrderButton = new System.Windows.Forms.Button();
+            this.addAccountButton = new System.Windows.Forms.Button();
             this.OptionsGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,15 +57,6 @@ namespace WinFormsUI
             this.OptionsGroupBox.TabIndex = 1;
             this.OptionsGroupBox.TabStop = false;
             // 
-            // addAccountButton
-            // 
-            this.addAccountButton.Location = new System.Drawing.Point(0, 147);
-            this.addAccountButton.Name = "addAccountButton";
-            this.addAccountButton.Size = new System.Drawing.Size(194, 50);
-            this.addAccountButton.TabIndex = 1;
-            this.addAccountButton.Text = "Add Account";
-            this.addAccountButton.UseVisualStyleBackColor = true;
-            // 
             // newOrderButton
             // 
             this.newOrderButton.Location = new System.Drawing.Point(0, 249);
@@ -75,6 +66,16 @@ namespace WinFormsUI
             this.newOrderButton.Text = "New Order";
             this.newOrderButton.UseVisualStyleBackColor = true;
             this.newOrderButton.Click += new System.EventHandler(this.newAccountButton_Click);
+            // 
+            // addAccountButton
+            // 
+            this.addAccountButton.Location = new System.Drawing.Point(0, 147);
+            this.addAccountButton.Name = "addAccountButton";
+            this.addAccountButton.Size = new System.Drawing.Size(194, 50);
+            this.addAccountButton.TabIndex = 1;
+            this.addAccountButton.Text = "Add Account";
+            this.addAccountButton.UseVisualStyleBackColor = true;
+            this.addAccountButton.Click += new System.EventHandler(this.addAccountButton_Click);
             // 
             // Form1
             // 

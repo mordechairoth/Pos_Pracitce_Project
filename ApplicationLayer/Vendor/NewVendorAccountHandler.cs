@@ -2,6 +2,7 @@
 using POS.ViewModels;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace ApplicationLayer.Vendor
@@ -12,7 +13,6 @@ namespace ApplicationLayer.Vendor
         {
             VendorAccount = new VendorAccountVm();
         }
-
         public  VendorAccountVm VendorAccount { get; }
 
         public bool IsSaved { get; private set; }
@@ -23,10 +23,16 @@ namespace ApplicationLayer.Vendor
             {
                 throw new Exception("Item is already saved cannot save twice.");
             }
-            
+
+            VendorAccount.AccountNumber = GetRandomNumberAsString();
             var vendorAccountRepository = new VendorAccountRepository();
             vendorAccountRepository.Add(VendorAccount);
             IsSaved = true;
+        }
+
+        public string GetRandomNumberAsString()
+        {
+            return new Random(new Guid().ToString().Select(x => (int)x).Sum()).Next().ToString();
         }
     }
 }

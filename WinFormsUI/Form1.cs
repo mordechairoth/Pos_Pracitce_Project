@@ -28,5 +28,11 @@ namespace WinFormsUI
         {
 
         }
+
+        private void addAccountButton_Click(object sender, EventArgs e)
+        {
+            AddVendorAccountForm vendorAccountForm = new AddVendorAccountForm();
+            vendorAccountForm.Show();
+        }
     }
 }

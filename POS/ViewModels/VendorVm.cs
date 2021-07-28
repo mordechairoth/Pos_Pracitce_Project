@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace POS.ViewModels
 {
@@ -18,6 +16,6 @@ namespace POS.ViewModels
         public string Phone { get; set; }
         public string PhoneExtension { get; set; }
         public string Email { get; set; }
-        public string CreatedOn { get; internal set; }
+        public DateTime CreatedOn { get; internal set; }
     }
 }
