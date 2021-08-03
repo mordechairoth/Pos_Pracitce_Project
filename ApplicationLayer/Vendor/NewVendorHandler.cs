@@ -12,6 +12,7 @@ namespace ApplicationLayer.Vendor
         {
             Vendor = new VendorVm();
         }
+        public event EventHandler NewVendorSavedEventHandler;
         public VendorVm Vendor { get; }
         public bool IsSaved { get; private set; }
 
@@ -25,6 +26,12 @@ namespace ApplicationLayer.Vendor
             VendorRepository vendorRepository = new VendorRepository();
             vendorRepository.Add(Vendor);
             IsSaved = true;
+            OnNewVendorSaved();
+        }
+
+        protected virtual void OnNewVendorSaved()
+        {
+            NewVendorSavedEventHandler?.Invoke(this, EventArgs.Empty);
         }
     }
 }

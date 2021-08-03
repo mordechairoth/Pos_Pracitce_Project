@@ -1,7 +1,7 @@
 ﻿
 namespace WinFormsUI
 {
-    partial class Form1
+    partial class StartingScreenForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -33,7 +33,17 @@ namespace WinFormsUI
             this.OptionsGroupBox = new System.Windows.Forms.GroupBox();
             this.newOrderButton = new System.Windows.Forms.Button();
             this.addAccountButton = new System.Windows.Forms.Button();
+            this.gridViewTabControl = new System.Windows.Forms.TabControl();
+            this.vendorsTabPage = new System.Windows.Forms.TabPage();
+            this.vendorsDataGridView = new System.Windows.Forms.DataGridView();
+            this.vendorAccountsTabPage = new System.Windows.Forms.TabPage();
+            this.vendorAccountsGridView = new System.Windows.Forms.DataGridView();
             this.OptionsGroupBox.SuspendLayout();
+            this.gridViewTabControl.SuspendLayout();
+            this.vendorsTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vendorsDataGridView)).BeginInit();
+            this.vendorAccountsTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vendorAccountsGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // addVendorButton
@@ -77,15 +87,74 @@ namespace WinFormsUI
             this.addAccountButton.UseVisualStyleBackColor = true;
             this.addAccountButton.Click += new System.EventHandler(this.addAccountButton_Click);
             // 
-            // Form1
+            // gridViewTabControl
+            // 
+            this.gridViewTabControl.Controls.Add(this.vendorsTabPage);
+            this.gridViewTabControl.Controls.Add(this.vendorAccountsTabPage);
+            this.gridViewTabControl.Location = new System.Drawing.Point(251, 113);
+            this.gridViewTabControl.Name = "gridViewTabControl";
+            this.gridViewTabControl.SelectedIndex = 0;
+            this.gridViewTabControl.Size = new System.Drawing.Size(1034, 329);
+            this.gridViewTabControl.TabIndex = 2;
+            // 
+            // vendorsTabPage
+            // 
+            this.vendorsTabPage.Controls.Add(this.vendorsDataGridView);
+            this.vendorsTabPage.Location = new System.Drawing.Point(4, 29);
+            this.vendorsTabPage.Name = "vendorsTabPage";
+            this.vendorsTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.vendorsTabPage.Size = new System.Drawing.Size(1026, 296);
+            this.vendorsTabPage.TabIndex = 0;
+            this.vendorsTabPage.Text = "Vendors";
+            this.vendorsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // vendorsDataGridView
+            // 
+            this.vendorsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vendorsDataGridView.Location = new System.Drawing.Point(3, 3);
+            this.vendorsDataGridView.Name = "vendorsDataGridView";
+            this.vendorsDataGridView.RowHeadersWidth = 51;
+            this.vendorsDataGridView.RowTemplate.Height = 29;
+            this.vendorsDataGridView.Size = new System.Drawing.Size(1020, 287);
+            this.vendorsDataGridView.TabIndex = 0;
+            // 
+            // vendorAccountsTabPage
+            // 
+            this.vendorAccountsTabPage.Controls.Add(this.vendorAccountsGridView);
+            this.vendorAccountsTabPage.Location = new System.Drawing.Point(4, 29);
+            this.vendorAccountsTabPage.Name = "vendorAccountsTabPage";
+            this.vendorAccountsTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.vendorAccountsTabPage.Size = new System.Drawing.Size(1026, 296);
+            this.vendorAccountsTabPage.TabIndex = 1;
+            this.vendorAccountsTabPage.Text = "Vendor Accounts";
+            this.vendorAccountsTabPage.UseVisualStyleBackColor = true;
+            // 
+            // vendorAccountsGridView
+            // 
+            this.vendorAccountsGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.vendorAccountsGridView.Location = new System.Drawing.Point(3, 5);
+            this.vendorAccountsGridView.Name = "vendorAccountsGridView";
+            this.vendorAccountsGridView.RowHeadersWidth = 51;
+            this.vendorAccountsGridView.RowTemplate.Height = 29;
+            this.vendorAccountsGridView.Size = new System.Drawing.Size(1020, 287);
+            this.vendorAccountsGridView.TabIndex = 1;
+            this.vendorAccountsGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vendorAccountsGridView_CellContentClick);
+            // 
+            // StartingScreenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1525, 596);
+            this.Controls.Add(this.gridViewTabControl);
             this.Controls.Add(this.OptionsGroupBox);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "StartingScreenForm";
+            this.Text = "StartingScreenForm";
             this.OptionsGroupBox.ResumeLayout(false);
+            this.gridViewTabControl.ResumeLayout(false);
+            this.vendorsTabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.vendorsDataGridView)).EndInit();
+            this.vendorAccountsTabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.vendorAccountsGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -96,6 +165,11 @@ namespace WinFormsUI
         private System.Windows.Forms.GroupBox OptionsGroupBox;
         private System.Windows.Forms.Button newOrderButton;
         private System.Windows.Forms.Button addAccountButton;
+        private System.Windows.Forms.TabControl gridViewTabControl;
+        private System.Windows.Forms.TabPage vendorsTabPage;
+        private System.Windows.Forms.DataGridView vendorsDataGridView;
+        private System.Windows.Forms.TabPage vendorAccountsTabPage;
+        private System.Windows.Forms.DataGridView vendorAccountsGridView;
     }
 }
 

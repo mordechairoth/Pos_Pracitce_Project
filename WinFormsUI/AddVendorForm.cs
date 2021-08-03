@@ -6,11 +6,15 @@ namespace WinFormsUI
 {
     public partial class AddVendorForm : Form
     {
+        public event EventHandler NewVendorSavedEventHandler;
         private readonly NewVendorHandler vendorHandler;
+       
         public AddVendorForm()
         {
             InitializeComponent();
             vendorHandler = new NewVendorHandler();
+            vendorHandler.NewVendorSavedEventHandler += (sender, args) => { NewVendorSavedEventHandler?.Invoke(sender, args); };
+            vendorHandler.NewVendorSavedEventHandler += (sender, args) => { MessageBox.Show("Saved"); };
         }
 
         private void phoneExtensionTextBox_TextChanged(object sender, EventArgs e)
@@ -41,7 +45,6 @@ namespace WinFormsUI
         private void saveButton_Click(object sender, EventArgs e)
         {
             vendorHandler.Save();
-            MessageBox.Show("SAVED!");
             Close();
         }
 
@@ -89,5 +92,13 @@ namespace WinFormsUI
         {
             vendorHandler.Vendor.Email = emailTextBox.Text;
         }
+
+        protected virtual void OnNewVendorSaved(object sender, EventArgs args)
+        {
+            NewVendorSavedEventHandler?.Invoke(sender, args);
+        }
+
+
+       
     }
 }

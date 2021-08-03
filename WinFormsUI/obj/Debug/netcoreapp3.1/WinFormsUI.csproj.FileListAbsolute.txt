@@ -6,7 +6,6 @@ C:\Users\morde\source\repos\POS\WinFormsUI\bin\Debug\netcoreapp3.1\WinFormsUI.dl
 C:\Users\morde\source\repos\POS\WinFormsUI\bin\Debug\netcoreapp3.1\WinFormsUI.pdb
 C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.csprojAssemblyReference.cache
 C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.AddVendorForm.resources
-C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.Form1.resources
 C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.csproj.GenerateResource.cache
 C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.AssemblyInfoInputs.cache
 C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.AssemblyInfo.cs
@@ -29,3 +28,4 @@ C:\Users\morde\source\repos\POS\WinFormsUI\bin\Debug\netcoreapp3.1\ApplicationLa
 C:\Users\morde\source\repos\POS\WinFormsUI\bin\Debug\netcoreapp3.1\POS.pdb
 C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.csproj.CopyComplete
 C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.AddVendorAccountForm.resources
+C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.StartingScreenForm.resources

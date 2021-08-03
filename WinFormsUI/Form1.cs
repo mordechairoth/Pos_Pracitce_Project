@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ApplicationLayer.Vendor;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,17 +11,19 @@ using System.Windows.Forms;
 
 namespace WinFormsUI
 {
-    public partial class Form1 : Form
+    public partial class StartingScreenForm : Form
     {
-        public Form1()
+       
+        public StartingScreenForm()
         {
             InitializeComponent();
+            BindVendorsToVendorsDataGridView();
         }
 
         private void addVendorButton_Click(object sender, EventArgs e)
         {
-            //open the new vendor form, when saving the vendor, colse the new vendor form
             var addVendorForm = new AddVendorForm();
+            addVendorForm.NewVendorSavedEventHandler += OnNewVendorSaved;
             addVendorForm.Show();
         }
 
@@ -33,6 +36,24 @@ namespace WinFormsUI
         {
             AddVendorAccountForm vendorAccountForm = new AddVendorAccountForm();
             vendorAccountForm.Show();
+        }
+
+        private void vendorAccountsGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void OnNewVendorSaved(object sender, EventArgs e)
+        {
+            BindVendorsToVendorsDataGridView();
+        }
+        private void BindVendorsToVendorsDataGridView()
+        {
+            var bindingSource = new BindingSource
+            {
+                DataSource = VendorQueryHelper.GetAllVendors()
+            }; 
+            vendorsDataGridView.DataSource = bindingSource;
         }
     }
 }
