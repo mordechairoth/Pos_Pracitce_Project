@@ -75,7 +75,6 @@ namespace WinFormsUI
             this.newOrderButton.TabIndex = 2;
             this.newOrderButton.Text = "New Order";
             this.newOrderButton.UseVisualStyleBackColor = true;
-            this.newOrderButton.Click += new System.EventHandler(this.newAccountButton_Click);
             // 
             // addAccountButton
             // 
@@ -117,6 +116,7 @@ namespace WinFormsUI
             this.vendorsDataGridView.RowTemplate.Height = 29;
             this.vendorsDataGridView.Size = new System.Drawing.Size(1020, 287);
             this.vendorsDataGridView.TabIndex = 0;
+            this.vendorsDataGridView.Click += VendorsDataGridView_Click;
             // 
             // vendorAccountsTabPage
             // 
@@ -138,7 +138,6 @@ namespace WinFormsUI
             this.vendorAccountsGridView.RowTemplate.Height = 29;
             this.vendorAccountsGridView.Size = new System.Drawing.Size(1020, 287);
             this.vendorAccountsGridView.TabIndex = 1;
-            this.vendorAccountsGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.vendorAccountsGridView_CellContentClick);
             // 
             // StartingScreenForm
             // 

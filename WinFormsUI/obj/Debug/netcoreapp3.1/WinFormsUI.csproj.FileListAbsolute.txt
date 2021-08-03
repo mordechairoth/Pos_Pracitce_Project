@@ -29,3 +29,4 @@ C:\Users\morde\source\repos\POS\WinFormsUI\bin\Debug\netcoreapp3.1\POS.pdb
 C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.csproj.CopyComplete
 C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.AddVendorAccountForm.resources
 C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.StartingScreenForm.resources
+C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.VendorDetailsForm.resources

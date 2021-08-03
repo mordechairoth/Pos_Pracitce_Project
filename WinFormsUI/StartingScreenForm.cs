@@ -1,4 +1,5 @@
 ﻿using ApplicationLayer.Vendor;
+using POS.ViewModels.Vendor;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,19 @@ namespace WinFormsUI
             BindVendorsToVendorsDataGridView();
         }
 
+        private void VendorsDataGridView_Click(object sender, EventArgs e)
+        {
+            VendorBasicInfoVm vendor = ((VendorBasicInfoVm)((BindingSource)((DataGridView)sender).DataSource).Current);
+            DisplayVendorDetails(vendor);
+        }
+
+        private void DisplayVendorDetails(VendorBasicInfoVm vendorBasicInfoVm)
+        {
+            int vendorId = vendorBasicInfoVm.VendorId;
+            var vendorDetailsForm = new VendorDetailsForm(vendorId);
+            vendorDetailsForm.Show();
+        }
+
         private void addVendorButton_Click(object sender, EventArgs e)
         {
             var addVendorForm = new AddVendorForm();
@@ -27,20 +41,10 @@ namespace WinFormsUI
             addVendorForm.Show();
         }
 
-        private void newAccountButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void addAccountButton_Click(object sender, EventArgs e)
         {
             AddVendorAccountForm vendorAccountForm = new AddVendorAccountForm();
             vendorAccountForm.Show();
-        }
-
-        private void vendorAccountsGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void OnNewVendorSaved(object sender, EventArgs e)
@@ -56,7 +60,8 @@ namespace WinFormsUI
             }; 
             
             vendorsDataGridView.DataSource = bindingSource;
-            
         }
+
+        
     }
 }
