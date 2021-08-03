@@ -49,11 +49,14 @@ namespace WinFormsUI
         }
         private void BindVendorsToVendorsDataGridView()
         {
+
             var bindingSource = new BindingSource
             {
-                DataSource = VendorQueryHelper.GetAllVendors()
+                DataSource = VendorQueryHelper.GetAllVendorBasicInfoVms()
             }; 
+            
             vendorsDataGridView.DataSource = bindingSource;
+            
         }
     }
 }

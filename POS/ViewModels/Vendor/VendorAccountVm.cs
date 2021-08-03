@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace POS.ViewModels
+namespace POS.ViewModels.Vendor
 {
     public class VendorAccountVm
     {

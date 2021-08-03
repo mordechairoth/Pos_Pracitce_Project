@@ -1,6 +1,6 @@
 ﻿using Dapper;
 using POS.DbEntities;
-using POS.ViewModels;
+using POS.ViewModels.Vendor;
 using System;
 using System.Collections.Generic;
 using System.Text;

@@ -1,6 +1,6 @@
 ﻿using Dapper;
 using POS.DbEntities;
-using POS.ViewModels;
+using POS.ViewModels.Vendor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,16 +10,34 @@ namespace POS.Repositories
 {
     public class VendorRepository
     {
+        private const string VENDORS_TABLE_NAME = "Vendors";
         public IEnumerable<VendorVm> All()
         {
             using var connection = DbHelper.GetNewSqlConnection();
-            var selectAllSqlQuery = DbHelper.GetSelectAllSqlString("Vendors");
+            var selectAllSqlQuery = DbHelper.GetSelectAllSqlString(VENDORS_TABLE_NAME);
             var vendors = connection.Query<Vendors>(selectAllSqlQuery);
 
             foreach (var vendor in vendors)
             {
                 yield return VendorsToVendorVm(vendor);
             }
+        }
+
+        public VendorVm Find(int vendorId)
+        {
+            using var connection = DbHelper.GetNewSqlConnection();
+            var findSqlQuery = DbHelper.GetFindByColumnSqlString(VENDORS_TABLE_NAME, "VendorId", vendorId.ToString());
+            var vendor = connection.Query<Vendors>(findSqlQuery);
+
+            try
+            {
+                return VendorsToVendorVm(vendor.First());
+            }
+            catch (Exception)
+            {
+                throw new KeyNotFoundException($"No Vendor with Id ${vendorId} found.");
+            }
+           
         }
         public void Add(VendorVm vendorVm)
         {

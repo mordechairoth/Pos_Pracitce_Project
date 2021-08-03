@@ -7,7 +7,7 @@
     <Compile Update="AddVendorForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Form1.cs">
+    <Compile Update="StartingScreenForm.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>

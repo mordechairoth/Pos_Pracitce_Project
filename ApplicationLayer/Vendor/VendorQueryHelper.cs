@@ -1,5 +1,5 @@
 ﻿using POS.Repositories;
-using POS.ViewModels;
+using POS.ViewModels.Vendor;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,15 @@ namespace ApplicationLayer.Vendor
             return vendorRepository.All();
         }
 
-        
+        public static IEnumerable<VendorBasicInfoVm> GetAllVendorBasicInfoVms()
+        {
+            return GetAllVendors().Select(x => new VendorBasicInfoVm(x));
+        }
+        public static VendorVm Find(int vendorId)
+        {
+            var vendorRepository = new VendorRepository();
+            return vendorRepository.Find(vendorId);
+        }
     }
 
 }
