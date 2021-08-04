@@ -30,3 +30,4 @@ C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.cs
 C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.AddVendorAccountForm.resources
 C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.StartingScreenForm.resources
 C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.VendorDetailsForm.resources
+C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.VendorAccountDetailsForm.resources

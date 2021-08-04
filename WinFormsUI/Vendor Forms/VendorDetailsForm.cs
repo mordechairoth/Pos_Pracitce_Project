@@ -15,7 +15,7 @@ namespace WinFormsUI
         public VendorDetailsForm(int VendorId)
         {
             InitializeComponent();
-            _vendor = VendorQueryHelper.Find(VendorId);
+            _vendor = VendorQueryHelper.FindVendor(VendorId);
             BindVendorDetailsToTextBoxes();
         }
 

@@ -15,6 +15,9 @@ namespace WinFormsUI
     {
         private readonly NewVendorAccountHandler _vendorAccountHandler;
         private readonly IEnumerable<VendorVm> _vendorVms;
+
+        public event EventHandler NewVendorAccountSavedEventHandler;
+
         public AddVendorAccountForm()
         {
             InitializeComponent();
@@ -22,6 +25,8 @@ namespace WinFormsUI
             _vendorVms = VendorQueryHelper.GetAllVendors();
             vendorComboBox.Items.AddRange(_vendorVms.Select(x => x.Name).ToArray());
             vendorComboBox.Items.Add("Add New Vendor...");
+            _vendorAccountHandler.NewVendorAccountSaved += (sender, e) => { NewVendorAccountSavedEventHandler?.Invoke(sender, e); };
+            _vendorAccountHandler.NewVendorAccountSaved += (sender, e) => { MessageBox.Show("Vendor Account Saved!");};
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -32,7 +37,6 @@ namespace WinFormsUI
         private void saveButton_Click(object sender, EventArgs e)
         {
             _vendorAccountHandler.Save();
-            MessageBox.Show("Account Saved!");
             Close();
         }
 

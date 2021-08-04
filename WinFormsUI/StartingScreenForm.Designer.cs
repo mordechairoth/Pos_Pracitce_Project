@@ -138,6 +138,7 @@ namespace WinFormsUI
             this.vendorAccountsGridView.RowTemplate.Height = 29;
             this.vendorAccountsGridView.Size = new System.Drawing.Size(1020, 287);
             this.vendorAccountsGridView.TabIndex = 1;
+            this.vendorAccountsGridView.Click += VendorAccountsGridView_Click;
             // 
             // StartingScreenForm
             // 

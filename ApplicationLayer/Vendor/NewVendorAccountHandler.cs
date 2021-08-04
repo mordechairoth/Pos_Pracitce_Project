@@ -14,7 +14,7 @@ namespace ApplicationLayer.Vendor
             VendorAccount = new VendorAccountVm();
         }
         public  VendorAccountVm VendorAccount { get; }
-
+        public event EventHandler NewVendorAccountSaved;
         public bool IsSaved { get; private set; }
 
         public void Save()
@@ -28,9 +28,14 @@ namespace ApplicationLayer.Vendor
             var vendorAccountRepository = new VendorAccountRepository();
             vendorAccountRepository.Add(VendorAccount);
             IsSaved = true;
+            OnNewVendorAccountSaved();
         }
 
-        public string GetRandomNumberAsString()
+        private void OnNewVendorAccountSaved()
+        {
+            NewVendorAccountSaved?.Invoke(this, EventArgs.Empty);
+        }
+        private string GetRandomNumberAsString()
         {
             return new Random(new Guid().ToString().Select(x => (int)x).Sum()).Next().ToString();
         }

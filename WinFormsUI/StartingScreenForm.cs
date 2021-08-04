@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace WinFormsUI
 {
     public partial class StartingScreenForm : Form
@@ -19,6 +20,7 @@ namespace WinFormsUI
         {
             InitializeComponent();
             BindVendorsToVendorsDataGridView();
+            BindVendorAccountsToVendorAccountsGridView();
         }
 
         private void VendorsDataGridView_Click(object sender, EventArgs e)
@@ -27,11 +29,26 @@ namespace WinFormsUI
             DisplayVendorDetails(vendor.VendorId);
         }
 
+        private void VendorAccountsGridView_Click(object sender, EventArgs e)
+        {
+            VendorAccountBasicInfoVm vendorAccount = ((VendorAccountBasicInfoVm)((BindingSource)((DataGridView)sender).DataSource).Current);
+            DisplayVendorAccountDetails(vendorAccount.VendorAccountId);
+        }
+        
+
         private void DisplayVendorDetails(int vendorId)
         {    
             var vendorDetailsForm = new VendorDetailsForm(vendorId);
             vendorDetailsForm.Show();
         }
+  
+        private void DisplayVendorAccountDetails(int vendorAccountId)
+        {
+            var vendorAccountDetailsFrom = new VendorAccountDetailsForm(vendorAccountId);
+            vendorAccountDetailsFrom.Show();
+        }
+
+       
 
         private void addVendorButton_Click(object sender, EventArgs e)
         {
@@ -39,10 +56,11 @@ namespace WinFormsUI
             addVendorForm.NewVendorSavedEventHandler += OnNewVendorSaved;
             addVendorForm.Show();
         }
-
+        
         private void addAccountButton_Click(object sender, EventArgs e)
         {
             AddVendorAccountForm vendorAccountForm = new AddVendorAccountForm();
+            vendorAccountForm.NewVendorAccountSavedEventHandler += OnNewVendorAccountSaved;
             vendorAccountForm.Show();
         }
 
@@ -50,15 +68,29 @@ namespace WinFormsUI
         {
             BindVendorsToVendorsDataGridView();
         }
+
+        private void OnNewVendorAccountSaved(object sender, EventArgs e)
+        {
+            BindVendorAccountsToVendorAccountsGridView();
+        }
         private void BindVendorsToVendorsDataGridView()
         {
-
             var bindingSource = new BindingSource
             {
                 DataSource = VendorQueryHelper.GetAllVendorBasicInfoVms()
             }; 
             
             vendorsDataGridView.DataSource = bindingSource;
+        }
+
+        private void BindVendorAccountsToVendorAccountsGridView()
+        {
+            var bindingSource = new BindingSource
+            {
+                DataSource = VendorQueryHelper.GetAllVendorAccountBasicInfo()
+            };
+
+            vendorAccountsGridView.DataSource = bindingSource;
         }
 
         
