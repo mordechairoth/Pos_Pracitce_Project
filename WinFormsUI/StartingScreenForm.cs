@@ -24,12 +24,11 @@ namespace WinFormsUI
         private void VendorsDataGridView_Click(object sender, EventArgs e)
         {
             VendorBasicInfoVm vendor = ((VendorBasicInfoVm)((BindingSource)((DataGridView)sender).DataSource).Current);
-            DisplayVendorDetails(vendor);
+            DisplayVendorDetails(vendor.VendorId);
         }
 
-        private void DisplayVendorDetails(VendorBasicInfoVm vendorBasicInfoVm)
-        {
-            int vendorId = vendorBasicInfoVm.VendorId;
+        private void DisplayVendorDetails(int vendorId)
+        {    
             var vendorDetailsForm = new VendorDetailsForm(vendorId);
             vendorDetailsForm.Show();
         }
