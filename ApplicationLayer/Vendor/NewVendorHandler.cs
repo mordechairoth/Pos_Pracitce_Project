@@ -12,6 +12,7 @@ namespace ApplicationLayer.Vendor
         {
             Vendor = new VendorVm();
         }
+
         public event EventHandler NewVendorSavedEventHandler;
         public VendorVm Vendor { get; }
         public bool IsSaved { get; private set; }

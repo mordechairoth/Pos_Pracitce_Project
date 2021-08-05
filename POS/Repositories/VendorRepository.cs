@@ -44,7 +44,7 @@ namespace POS.Repositories
             Vendors vendor = VendorVmToVendors(vendorVm);
 
             using var connection = DbHelper.GetNewSqlConnection();
-            var insertSqlCommand = DbHelper.GetInsertSqlString("Vendors", "Name", "ContactFirstName", "ContactLastName", "Address",
+            var insertSqlCommand = DbHelper.GetInsertSqlString(VENDORS_TABLE_NAME, "Name", "ContactFirstName", "ContactLastName", "Address",
                                                                 "Address2", "City", "State", "Zip", "Phone", "PhoneExtension", "Email");
             connection.ExecuteScalar(insertSqlCommand, vendor);
         }
@@ -56,6 +56,7 @@ namespace POS.Repositories
 
             foreach (var property in vendorVmProperties)
             {
+                if(!(property.Name == "FullContactName"))
                 vendors.GetType().GetProperty(property.Name).SetValue(vendors, property.GetValue(vendorVm));
             }
 

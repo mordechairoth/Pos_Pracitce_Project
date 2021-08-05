@@ -1,11 +1,13 @@
 ﻿using ApplicationLayer.Vendor;
 using POS.ViewModels.Vendor;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,7 +17,6 @@ namespace WinFormsUI
 {
     public partial class StartingScreenForm : Form
     {
-       
         public StartingScreenForm()
         {
             InitializeComponent();
@@ -92,7 +93,7 @@ namespace WinFormsUI
 
             vendorAccountsGridView.DataSource = bindingSource;
         }
-
         
     }
+
 }
