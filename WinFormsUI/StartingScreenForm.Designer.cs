@@ -38,12 +38,17 @@ namespace WinFormsUI
             this.vendorsDataGridView = new System.Windows.Forms.DataGridView();
             this.vendorAccountsTabPage = new System.Windows.Forms.TabPage();
             this.vendorAccountsGridView = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.addProductCategoryButton = new System.Windows.Forms.Button();
             this.OptionsGroupBox.SuspendLayout();
             this.gridViewTabControl.SuspendLayout();
             this.vendorsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vendorsDataGridView)).BeginInit();
             this.vendorAccountsTabPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vendorAccountsGridView)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // addVendorButton
@@ -93,7 +98,7 @@ namespace WinFormsUI
             this.gridViewTabControl.Location = new System.Drawing.Point(251, 113);
             this.gridViewTabControl.Name = "gridViewTabControl";
             this.gridViewTabControl.SelectedIndex = 0;
-            this.gridViewTabControl.Size = new System.Drawing.Size(1034, 329);
+            this.gridViewTabControl.Size = new System.Drawing.Size(960, 329);
             this.gridViewTabControl.TabIndex = 2;
             // 
             // vendorsTabPage
@@ -102,7 +107,7 @@ namespace WinFormsUI
             this.vendorsTabPage.Location = new System.Drawing.Point(4, 29);
             this.vendorsTabPage.Name = "vendorsTabPage";
             this.vendorsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.vendorsTabPage.Size = new System.Drawing.Size(1026, 296);
+            this.vendorsTabPage.Size = new System.Drawing.Size(952, 296);
             this.vendorsTabPage.TabIndex = 0;
             this.vendorsTabPage.Text = "Vendors";
             this.vendorsTabPage.UseVisualStyleBackColor = true;
@@ -114,7 +119,7 @@ namespace WinFormsUI
             this.vendorsDataGridView.Name = "vendorsDataGridView";
             this.vendorsDataGridView.RowHeadersWidth = 51;
             this.vendorsDataGridView.RowTemplate.Height = 29;
-            this.vendorsDataGridView.Size = new System.Drawing.Size(1020, 287);
+            this.vendorsDataGridView.Size = new System.Drawing.Size(950, 287);
             this.vendorsDataGridView.TabIndex = 0;
             this.vendorsDataGridView.Click += VendorsDataGridView_Click;
             // 
@@ -124,7 +129,7 @@ namespace WinFormsUI
             this.vendorAccountsTabPage.Location = new System.Drawing.Point(4, 29);
             this.vendorAccountsTabPage.Name = "vendorAccountsTabPage";
             this.vendorAccountsTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.vendorAccountsTabPage.Size = new System.Drawing.Size(1026, 296);
+            this.vendorAccountsTabPage.Size = new System.Drawing.Size(952, 296);
             this.vendorAccountsTabPage.TabIndex = 1;
             this.vendorAccountsTabPage.Text = "Vendor Accounts";
             this.vendorAccountsTabPage.UseVisualStyleBackColor = true;
@@ -140,11 +145,51 @@ namespace WinFormsUI
             this.vendorAccountsGridView.TabIndex = 1;
             this.vendorAccountsGridView.Click += VendorAccountsGridView_Click;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.addProductCategoryButton);
+            this.groupBox1.Location = new System.Drawing.Point(1305, 97);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(194, 345);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(0, 249);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(194, 50);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "New Order";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(0, 147);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(194, 50);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "Add Account";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // addProductCategoryButton
+            // 
+            this.addProductCategoryButton.Location = new System.Drawing.Point(0, 16);
+            this.addProductCategoryButton.Name = "addProductCategoryButton";
+            this.addProductCategoryButton.Size = new System.Drawing.Size(194, 50);
+            this.addProductCategoryButton.TabIndex = 0;
+            this.addProductCategoryButton.Text = "Add Product Category";
+            this.addProductCategoryButton.UseVisualStyleBackColor = true;
+            this.addProductCategoryButton.Click += new System.EventHandler(this.addProductCategoryButton_Click);
+            // 
             // StartingScreenForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1525, 596);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gridViewTabControl);
             this.Controls.Add(this.OptionsGroupBox);
             this.Name = "StartingScreenForm";
@@ -155,6 +200,7 @@ namespace WinFormsUI
             ((System.ComponentModel.ISupportInitialize)(this.vendorsDataGridView)).EndInit();
             this.vendorAccountsTabPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.vendorAccountsGridView)).EndInit();
+            this.groupBox1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -170,6 +216,10 @@ namespace WinFormsUI
         private System.Windows.Forms.DataGridView vendorsDataGridView;
         private System.Windows.Forms.TabPage vendorAccountsTabPage;
         private System.Windows.Forms.DataGridView vendorAccountsGridView;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button addProductCategoryButton;
     }
 }
 

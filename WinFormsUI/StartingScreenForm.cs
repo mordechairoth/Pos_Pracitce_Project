@@ -23,9 +23,10 @@ namespace WinFormsUI
             BindVendorsToVendorsDataGridView();
             BindVendorAccountsToVendorAccountsGridView();
         }
-
+        
         private void VendorsDataGridView_Click(object sender, EventArgs e)
         {
+            
             VendorBasicInfoVm vendor = ((VendorBasicInfoVm)((BindingSource)((DataGridView)sender).DataSource).Current);
             DisplayVendorDetails(vendor.VendorId);
         }
@@ -93,7 +94,13 @@ namespace WinFormsUI
 
             vendorAccountsGridView.DataSource = bindingSource;
         }
-        
+
+        private void addProductCategoryButton_Click(object sender, EventArgs e)
+        {
+            var productCategoryForm = new NewProductCategory();
+            productCategoryForm.Show();
+            //TODO add the event handler to reload the grid when catagories are displayed
+        }
     }
 
 }

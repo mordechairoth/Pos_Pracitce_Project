@@ -31,3 +31,6 @@ C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.Ad
 C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.StartingScreenForm.resources
 C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.VendorDetailsForm.resources
 C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.VendorAccountDetailsForm.resources
+C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.NewCompanyForm.resources
+C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.NewProductCategory.resources
+C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.NewProductForm.resources
