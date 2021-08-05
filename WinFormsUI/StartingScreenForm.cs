@@ -20,13 +20,19 @@ namespace WinFormsUI
         public StartingScreenForm()
         {
             InitializeComponent();
+            CustomInitializeComponent();
             BindVendorsToVendorsDataGridView();
             BindVendorAccountsToVendorAccountsGridView();
         }
-        
+
+        private void CustomInitializeComponent()
+        {
+            vendorsDataGridView.Click += VendorsDataGridView_Click;
+            vendorAccountsGridView.Click += VendorAccountsGridView_Click;
+        }
         private void VendorsDataGridView_Click(object sender, EventArgs e)
         {
-            
+
             VendorBasicInfoVm vendor = ((VendorBasicInfoVm)((BindingSource)((DataGridView)sender).DataSource).Current);
             DisplayVendorDetails(vendor.VendorId);
         }
@@ -101,6 +107,14 @@ namespace WinFormsUI
             productCategoryForm.Show();
             //TODO add the event handler to reload the grid when catagories are displayed
         }
+
+        private void addCompanyButton_Click(object sender, EventArgs e)
+        {
+            var addCompanyForm = new NewCompanyForm();
+            addCompanyForm.Show();
+            //TODO add the event handler to reaload the grid when companies are displayed
+        }
+
     }
 
 }

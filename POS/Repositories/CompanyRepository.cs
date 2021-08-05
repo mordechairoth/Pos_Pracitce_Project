@@ -1,10 +1,10 @@
-﻿using POS.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using Dapper;
 using System.Data;
 using POS.DbEntities;
 using System.Linq;
+using POS.ViewModels.Product;
 
 namespace POS.Repositories
 {

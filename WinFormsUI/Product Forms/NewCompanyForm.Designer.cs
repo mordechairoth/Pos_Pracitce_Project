@@ -56,21 +56,23 @@ namespace WinFormsUI
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(450, 510);
+            this.saveButton.Location = new System.Drawing.Point(538, 510);
             this.saveButton.Name = "saveButton";
             this.saveButton.Size = new System.Drawing.Size(160, 46);
             this.saveButton.TabIndex = 64;
             this.saveButton.Text = "SAVE";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // cancelButton
             // 
-            this.cancelButton.Location = new System.Drawing.Point(207, 510);
+            this.cancelButton.Location = new System.Drawing.Point(157, 510);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(160, 46);
             this.cancelButton.TabIndex = 63;
             this.cancelButton.Text = "CANCEL";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // enterInfoLabel
             // 
@@ -99,7 +101,6 @@ namespace WinFormsUI
             this.companyNameLabel.Size = new System.Drawing.Size(49, 20);
             this.companyNameLabel.TabIndex = 60;
             this.companyNameLabel.Text = "Name";
-            this.companyNameLabel.Click += new System.EventHandler(this.companyNameLabel_Click);
             // 
             // companyDescriptionTextBox
             // 
@@ -107,6 +108,7 @@ namespace WinFormsUI
             this.companyDescriptionTextBox.Name = "companyDescriptionTextBox";
             this.companyDescriptionTextBox.Size = new System.Drawing.Size(541, 27);
             this.companyDescriptionTextBox.TabIndex = 59;
+            this.companyDescriptionTextBox.TextChanged += new System.EventHandler(this.companyDescriptionTextBox_TextChanged);
             // 
             // companyNameTextBox
             // 
@@ -114,6 +116,7 @@ namespace WinFormsUI
             this.companyNameTextBox.Name = "companyNameTextBox";
             this.companyNameTextBox.Size = new System.Drawing.Size(541, 27);
             this.companyNameTextBox.TabIndex = 58;
+            this.companyNameTextBox.TextChanged += new System.EventHandler(this.companyNameTextBox_TextChanged);
             // 
             // emailLabel
             // 
@@ -157,6 +160,7 @@ namespace WinFormsUI
             this.stateTextBox.Name = "stateTextBox";
             this.stateTextBox.Size = new System.Drawing.Size(125, 27);
             this.stateTextBox.TabIndex = 76;
+            this.stateTextBox.TextChanged += new System.EventHandler(this.stateTextBox_TextChanged);
             // 
             // zipLabel
             // 
@@ -173,6 +177,7 @@ namespace WinFormsUI
             this.zipTextBox.Name = "zipTextBox";
             this.zipTextBox.Size = new System.Drawing.Size(125, 27);
             this.zipTextBox.TabIndex = 74;
+            this.zipTextBox.TextChanged += new System.EventHandler(this.zipTextBox_TextChanged);
             // 
             // cityLabel
             // 
@@ -198,6 +203,7 @@ namespace WinFormsUI
             this.address2TextBox.Name = "address2TextBox";
             this.address2TextBox.Size = new System.Drawing.Size(541, 27);
             this.address2TextBox.TabIndex = 71;
+            this.address2TextBox.TextChanged += new System.EventHandler(this.address2TextBox_TextChanged);
             // 
             // addressLabel
             // 
@@ -214,6 +220,7 @@ namespace WinFormsUI
             this.cityTextBox.Name = "cityTextBox";
             this.cityTextBox.Size = new System.Drawing.Size(125, 27);
             this.cityTextBox.TabIndex = 69;
+            this.cityTextBox.TextChanged += new System.EventHandler(this.cityTextBox_TextChanged);
             // 
             // emailTextBox
             // 
@@ -221,6 +228,7 @@ namespace WinFormsUI
             this.emailTextBox.Name = "emailTextBox";
             this.emailTextBox.Size = new System.Drawing.Size(541, 27);
             this.emailTextBox.TabIndex = 68;
+            this.emailTextBox.TextChanged += new System.EventHandler(this.emailTextBox_TextChanged);
             // 
             // phoneTextBox
             // 
@@ -228,6 +236,7 @@ namespace WinFormsUI
             this.phoneTextBox.Name = "phoneTextBox";
             this.phoneTextBox.Size = new System.Drawing.Size(246, 27);
             this.phoneTextBox.TabIndex = 67;
+            this.phoneTextBox.TextChanged += new System.EventHandler(this.phoneTextBox_TextChanged);
             // 
             // addressTextBox
             // 
@@ -235,6 +244,7 @@ namespace WinFormsUI
             this.addressTextBox.Name = "addressTextBox";
             this.addressTextBox.Size = new System.Drawing.Size(541, 27);
             this.addressTextBox.TabIndex = 66;
+            this.addressTextBox.TextChanged += new System.EventHandler(this.addressTextBox_TextChanged);
             // 
             // phoneExtensionTextBox
             // 
@@ -242,6 +252,7 @@ namespace WinFormsUI
             this.phoneExtensionTextBox.Name = "phoneExtensionTextBox";
             this.phoneExtensionTextBox.Size = new System.Drawing.Size(147, 27);
             this.phoneExtensionTextBox.TabIndex = 65;
+            this.phoneExtensionTextBox.TextChanged += new System.EventHandler(this.phoneExtensionTextBox_TextChanged);
             // 
             // NewCompanyForm
             // 

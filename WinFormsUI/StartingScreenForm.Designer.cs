@@ -40,7 +40,7 @@ namespace WinFormsUI
             this.vendorAccountsGridView = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.addCompanyButton = new System.Windows.Forms.Button();
             this.addProductCategoryButton = new System.Windows.Forms.Button();
             this.OptionsGroupBox.SuspendLayout();
             this.gridViewTabControl.SuspendLayout();
@@ -121,7 +121,6 @@ namespace WinFormsUI
             this.vendorsDataGridView.RowTemplate.Height = 29;
             this.vendorsDataGridView.Size = new System.Drawing.Size(950, 287);
             this.vendorsDataGridView.TabIndex = 0;
-            this.vendorsDataGridView.Click += VendorsDataGridView_Click;
             // 
             // vendorAccountsTabPage
             // 
@@ -143,12 +142,11 @@ namespace WinFormsUI
             this.vendorAccountsGridView.RowTemplate.Height = 29;
             this.vendorAccountsGridView.Size = new System.Drawing.Size(1020, 287);
             this.vendorAccountsGridView.TabIndex = 1;
-            this.vendorAccountsGridView.Click += VendorAccountsGridView_Click;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.addCompanyButton);
             this.groupBox1.Controls.Add(this.addProductCategoryButton);
             this.groupBox1.Location = new System.Drawing.Point(1305, 97);
             this.groupBox1.Name = "groupBox1";
@@ -165,14 +163,15 @@ namespace WinFormsUI
             this.button1.Text = "New Order";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // addCompanyButton
             // 
-            this.button2.Location = new System.Drawing.Point(0, 147);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(194, 50);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Add Account";
-            this.button2.UseVisualStyleBackColor = true;
+            this.addCompanyButton.Location = new System.Drawing.Point(0, 147);
+            this.addCompanyButton.Name = "addCompanyButton";
+            this.addCompanyButton.Size = new System.Drawing.Size(194, 50);
+            this.addCompanyButton.TabIndex = 1;
+            this.addCompanyButton.Text = "Add Company";
+            this.addCompanyButton.UseVisualStyleBackColor = true;
+            this.addCompanyButton.Click += new System.EventHandler(this.addCompanyButton_Click);
             // 
             // addProductCategoryButton
             // 
@@ -218,7 +217,7 @@ namespace WinFormsUI
         private System.Windows.Forms.DataGridView vendorAccountsGridView;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button addCompanyButton;
         private System.Windows.Forms.Button addProductCategoryButton;
     }
 }

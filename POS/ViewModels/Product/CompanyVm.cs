@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace POS.ViewModels
+namespace POS.ViewModels.Product
 {
     public class CompanyVm
     {
-        public int CompanyId { get; set; }
+        public int? CompanyId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Address { get; set; }
@@ -18,5 +18,6 @@ namespace POS.ViewModels
         public string PhoneExtension { get; set; }
         public string Email { get; set; }
         public DateTime CreatedOn { get; internal set; }
+       
     }
 }
