@@ -34,12 +34,14 @@ namespace WinFormsUI
             this.enterInfoLabel = new System.Windows.Forms.Label();
             this.companyDescriptionLabel = new System.Windows.Forms.Label();
             this.companyNameLabel = new System.Windows.Forms.Label();
-            this.companyDescriptionTextBox = new System.Windows.Forms.TextBox();
-            this.companyNameTextBox = new System.Windows.Forms.TextBox();
+            this.productDescriptionTextBox = new System.Windows.Forms.TextBox();
+            this.productNameTextBox = new System.Windows.Forms.TextBox();
             this.categoryComboBox = new System.Windows.Forms.ComboBox();
             this.companyComboBox = new System.Windows.Forms.ComboBox();
             this.companyLabel = new System.Windows.Forms.Label();
             this.categoryLabel = new System.Windows.Forms.Label();
+            this.barCodeLabel = new System.Windows.Forms.Label();
+            this.barCodeTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // saveButton
@@ -50,6 +52,7 @@ namespace WinFormsUI
             this.saveButton.TabIndex = 71;
             this.saveButton.Text = "SAVE";
             this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // cancelButton
             // 
@@ -59,6 +62,7 @@ namespace WinFormsUI
             this.cancelButton.TabIndex = 70;
             this.cancelButton.Text = "CANCEL";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // enterInfoLabel
             // 
@@ -88,40 +92,44 @@ namespace WinFormsUI
             this.companyNameLabel.TabIndex = 67;
             this.companyNameLabel.Text = "Name";
             // 
-            // companyDescriptionTextBox
+            // productDescriptionTextBox
             // 
-            this.companyDescriptionTextBox.Location = new System.Drawing.Point(232, 170);
-            this.companyDescriptionTextBox.Name = "companyDescriptionTextBox";
-            this.companyDescriptionTextBox.Size = new System.Drawing.Size(403, 27);
-            this.companyDescriptionTextBox.TabIndex = 66;
+            this.productDescriptionTextBox.Location = new System.Drawing.Point(232, 170);
+            this.productDescriptionTextBox.Name = "productDescriptionTextBox";
+            this.productDescriptionTextBox.Size = new System.Drawing.Size(403, 27);
+            this.productDescriptionTextBox.TabIndex = 66;
+            this.productDescriptionTextBox.TextChanged += new System.EventHandler(this.productDescriptionTextBox_TextChanged);
             // 
-            // companyNameTextBox
+            // productNameTextBox
             // 
-            this.companyNameTextBox.Location = new System.Drawing.Point(232, 104);
-            this.companyNameTextBox.Name = "companyNameTextBox";
-            this.companyNameTextBox.Size = new System.Drawing.Size(403, 27);
-            this.companyNameTextBox.TabIndex = 65;
+            this.productNameTextBox.Location = new System.Drawing.Point(232, 104);
+            this.productNameTextBox.Name = "productNameTextBox";
+            this.productNameTextBox.Size = new System.Drawing.Size(403, 27);
+            this.productNameTextBox.TabIndex = 65;
+            this.productNameTextBox.TextChanged += new System.EventHandler(this.productNameTextBox_TextChanged);
             // 
             // categoryComboBox
             // 
             this.categoryComboBox.FormattingEnabled = true;
-            this.categoryComboBox.Location = new System.Drawing.Point(232, 237);
+            this.categoryComboBox.Location = new System.Drawing.Point(232, 305);
             this.categoryComboBox.Name = "categoryComboBox";
             this.categoryComboBox.Size = new System.Drawing.Size(403, 28);
             this.categoryComboBox.TabIndex = 72;
+            this.categoryComboBox.SelectedIndexChanged += new System.EventHandler(this.categoryComboBox_SelectedIndexChanged);
             // 
             // companyComboBox
             // 
             this.companyComboBox.FormattingEnabled = true;
-            this.companyComboBox.Location = new System.Drawing.Point(232, 305);
+            this.companyComboBox.Location = new System.Drawing.Point(232, 363);
             this.companyComboBox.Name = "companyComboBox";
             this.companyComboBox.Size = new System.Drawing.Size(403, 28);
             this.companyComboBox.TabIndex = 73;
+            this.companyComboBox.SelectedIndexChanged += new System.EventHandler(this.companyComboBox_SelectedIndexChanged);
             // 
             // companyLabel
             // 
             this.companyLabel.AutoSize = true;
-            this.companyLabel.Location = new System.Drawing.Point(42, 313);
+            this.companyLabel.Location = new System.Drawing.Point(42, 366);
             this.companyLabel.Name = "companyLabel";
             this.companyLabel.Size = new System.Drawing.Size(169, 20);
             this.companyLabel.TabIndex = 74;
@@ -130,17 +138,36 @@ namespace WinFormsUI
             // categoryLabel
             // 
             this.categoryLabel.AutoSize = true;
-            this.categoryLabel.Location = new System.Drawing.Point(142, 240);
+            this.categoryLabel.Location = new System.Drawing.Point(142, 305);
             this.categoryLabel.Name = "categoryLabel";
             this.categoryLabel.Size = new System.Drawing.Size(69, 20);
             this.categoryLabel.TabIndex = 75;
             this.categoryLabel.Text = "Category";
+            // 
+            // barCodeLabel
+            // 
+            this.barCodeLabel.AutoSize = true;
+            this.barCodeLabel.Location = new System.Drawing.Point(126, 247);
+            this.barCodeLabel.Name = "barCodeLabel";
+            this.barCodeLabel.Size = new System.Drawing.Size(70, 20);
+            this.barCodeLabel.TabIndex = 77;
+            this.barCodeLabel.Text = "Bar Code";
+            // 
+            // barCodeTextBox
+            // 
+            this.barCodeTextBox.Location = new System.Drawing.Point(232, 244);
+            this.barCodeTextBox.Name = "barCodeTextBox";
+            this.barCodeTextBox.Size = new System.Drawing.Size(403, 27);
+            this.barCodeTextBox.TabIndex = 76;
+            this.barCodeTextBox.TextChanged += new System.EventHandler(this.barCodeTextBox_TextChanged);
             // 
             // NewProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(802, 557);
+            this.Controls.Add(this.barCodeLabel);
+            this.Controls.Add(this.barCodeTextBox);
             this.Controls.Add(this.categoryLabel);
             this.Controls.Add(this.companyLabel);
             this.Controls.Add(this.companyComboBox);
@@ -150,8 +177,8 @@ namespace WinFormsUI
             this.Controls.Add(this.enterInfoLabel);
             this.Controls.Add(this.companyDescriptionLabel);
             this.Controls.Add(this.companyNameLabel);
-            this.Controls.Add(this.companyDescriptionTextBox);
-            this.Controls.Add(this.companyNameTextBox);
+            this.Controls.Add(this.productDescriptionTextBox);
+            this.Controls.Add(this.productNameTextBox);
             this.Name = "NewProductForm";
             this.Text = "NewProductForm";
             this.ResumeLayout(false);
@@ -166,11 +193,13 @@ namespace WinFormsUI
         private System.Windows.Forms.Label enterInfoLabel;
         private System.Windows.Forms.Label companyDescriptionLabel;
         private System.Windows.Forms.Label companyNameLabel;
-        private System.Windows.Forms.TextBox companyDescriptionTextBox;
-        private System.Windows.Forms.TextBox companyNameTextBox;
+        private System.Windows.Forms.TextBox productDescriptionTextBox;
+        private System.Windows.Forms.TextBox productNameTextBox;
         private System.Windows.Forms.ComboBox categoryComboBox;
         private System.Windows.Forms.ComboBox companyComboBox;
         private System.Windows.Forms.Label companyLabel;
         private System.Windows.Forms.Label categoryLabel;
+        private System.Windows.Forms.Label barCodeLabel;
+        private System.Windows.Forms.TextBox barCodeTextBox;
     }
 }

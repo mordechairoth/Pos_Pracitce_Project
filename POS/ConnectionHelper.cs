@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dapper;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -49,7 +50,13 @@ namespace POS
         {
             return $"select * from {tableName} where {findByColumnName} = {columnValue} and IsDeleted = 0";
         }
-            
+        
+        public static IEnumerable<T> GetAllRows<T>(string tableName)
+        {
+            using var connection = DbHelper.GetNewSqlConnection();
+            var selectAllSqlQuery = DbHelper.GetSelectAllSqlString(tableName);
+            return  connection.Query<T>(selectAllSqlQuery);
+        }
         
     }
 }

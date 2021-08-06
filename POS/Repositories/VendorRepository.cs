@@ -13,9 +13,7 @@ namespace POS.Repositories
         private const string VENDORS_TABLE_NAME = "Vendors";
         public IEnumerable<VendorVm> All()
         {
-            using var connection = DbHelper.GetNewSqlConnection();
-            var selectAllSqlQuery = DbHelper.GetSelectAllSqlString(VENDORS_TABLE_NAME);
-            var vendors = connection.Query<Vendors>(selectAllSqlQuery);
+            var vendors = DbHelper.GetAllRows<Vendors>(VENDORS_TABLE_NAME);
 
             foreach (var vendor in vendors)
             {
@@ -56,8 +54,11 @@ namespace POS.Repositories
 
             foreach (var property in vendorVmProperties)
             {
-                if(!(property.Name == "FullContactName"))
-                vendors.GetType().GetProperty(property.Name).SetValue(vendors, property.GetValue(vendorVm));
+                bool hasNotMappedToEntityClassAttribute = property.GetCustomAttributes(typeof(NotMappedToEntityClassAttribute), false).Length > 0;
+                if (!hasNotMappedToEntityClassAttribute)
+                {
+                     vendors.GetType().GetProperty(property.Name).SetValue(vendors, property.GetValue(vendorVm));
+                }
             }
 
             return vendors;

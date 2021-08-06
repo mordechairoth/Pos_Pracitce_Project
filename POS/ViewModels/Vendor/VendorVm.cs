@@ -16,6 +16,7 @@ namespace POS.ViewModels.Vendor
         [DisplayName("Last Contact Name")]
         public string ContactLastName { get; set; }
 
+        [NotMappedToEntityClass]
         [DisplayName("Contact Name")]
         public string FullContactName => ContactFirstName + " " + ContactLastName;
         public string Address { get; set; }

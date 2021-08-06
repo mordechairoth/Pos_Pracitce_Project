@@ -115,6 +115,12 @@ namespace WinFormsUI
             //TODO add the event handler to reaload the grid when companies are displayed
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var addProductForm = new NewProductForm();
+            addProductForm.Show();
+            //Todo add the event handler to reload the grid when products are displayed
+        }
     }
 
 }
