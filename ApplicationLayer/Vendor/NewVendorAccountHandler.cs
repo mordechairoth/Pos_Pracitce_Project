@@ -24,7 +24,7 @@ namespace ApplicationLayer.Vendor
                 throw new Exception("Item is already saved cannot save twice.");
             }
 
-            VendorAccount.AccountNumber = GetRandomNumberAsString();
+            VendorAccount.AccountNumber = GetRandomNumberString();
             var vendorAccountRepository = new VendorAccountRepository();
             vendorAccountRepository.Add(VendorAccount);
             IsSaved = true;
@@ -35,9 +35,10 @@ namespace ApplicationLayer.Vendor
         {
             NewVendorAccountSaved?.Invoke(this, EventArgs.Empty);
         }
-        private string GetRandomNumberAsString()
+
+        private string GetRandomNumberString()
         {
-            return new Random(new Guid().ToString().Select(x => (int)x).Sum()).Next().ToString();
+            return new Random().Next().ToString();
         }
     }
 }
