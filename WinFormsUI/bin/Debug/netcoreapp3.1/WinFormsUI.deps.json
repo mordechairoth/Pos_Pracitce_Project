@@ -25,6 +25,14 @@
           }
         }
       },
+      "Inflector/1.0.0": {
+        "runtime": {
+          "lib/net45/Inflector.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "Microsoft.NETCore.Platforms/3.1.0": {},
       "Microsoft.Win32.Registry/4.7.0": {
         "dependencies": {
@@ -112,6 +120,7 @@
       "POS/1.0.0": {
         "dependencies": {
           "Dapper": "2.0.90",
+          "Inflector": "1.0.0",
           "System.Data.SqlClient": "4.8.2"
         },
         "runtime": {
@@ -132,6 +141,13 @@
       "sha512": "sha512-e4YjOLJptnpwHIbP8HxjaYf7So9lhUC43rvvGMEkH4Q4CiVlm4rOxYDo0HyuHlMQKj0U5Ob/nCMm52TUhTaZQg==",
       "path": "dapper/2.0.90",
       "hashPath": "dapper.2.0.90.nupkg.sha512"
+    },
+    "Inflector/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sTHSvP1KMbAM2jTjqo02zn4nkMd3Mfj76H9Ikyko9bmO6BHblkIQOKIwJwQSKurgpiczBlcirWnbFM/n/8XiiQ==",
+      "path": "inflector/1.0.0",
+      "hashPath": "inflector.1.0.0.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "type": "package",

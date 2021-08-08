@@ -14,7 +14,7 @@ namespace WinFormsUI
             InitializeComponent();
             vendorHandler = new NewVendorHandler();
             vendorHandler.NewVendorSavedEventHandler += (sender, args) => { NewVendorSavedEventHandler?.Invoke(sender, args); };
-            vendorHandler.NewVendorSavedEventHandler += (sender, args) => { MessageBox.Show("Saved"); };
+            vendorHandler.NewVendorSavedEventHandler += (sender, args) => { MessageBox.Show($"Saved {((NewVendorHandler)sender).Vendor.Name}"); };
         }
 
         private void phoneExtensionTextBox_TextChanged(object sender, EventArgs e)

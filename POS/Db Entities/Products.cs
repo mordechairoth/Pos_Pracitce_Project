@@ -13,19 +13,33 @@ namespace POS.DbEntities
             CustomerAccountOrderItems = new HashSet<CustomerAccountOrderItems>();
         }
 
+        [NotMappedWrite]
         public int ProductId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string BarCode { get; set; }
         public int? ProductCatagoryId { get; set; }
         public int CompanyId { get; set; }
+
+        [NotMappedWrite]
         public DateTime CreatedOn { get; set; }
+
+        [NotMappedWrite]
         public DateTime UpdatedOn { get; set; }
+
+        [NotMappedWrite]
         public bool IsDeleted { get; set; }
 
+        [NotMappedWrite]
         public virtual Companies Company { get; set; }
+
+        [NotMappedWrite]
         public virtual ProductCatagories ProductCatagory { get; set; }
+
+        [NotMappedWrite]
         public virtual ProductPrices ProductPrices { get; set; }
+
+        [NotMappedWrite]
         public virtual ICollection<CustomerAccountOrderItems> CustomerAccountOrderItems { get; set; }
     }
 }

@@ -13,6 +13,7 @@ namespace POS.DbEntities
             Products = new HashSet<Products>();
         }
 
+        [NotMappedWrite]
         public int CompanyId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
@@ -24,10 +25,17 @@ namespace POS.DbEntities
         public string Phone { get; set; }
         public string PhoneExtension { get; set; }
         public string Email { get; set; }
+
+        [NotMappedWrite]
         public DateTime CreatedOn { get; set; }
+
+        [NotMappedWrite]
         public DateTime UpdatedOn { get; set; }
+
+        [NotMappedWrite]
         public bool IsDeleted { get; set; }
 
+        [NotMappedWrite]
         public virtual ICollection<Products> Products { get; set; }
     }
 }

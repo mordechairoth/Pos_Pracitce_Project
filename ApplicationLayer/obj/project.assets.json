@@ -14,6 +14,15 @@
           "lib/netstandard2.0/Dapper.dll": {}
         }
       },
+      "Inflector/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Inflector.dll": {}
+        },
+        "runtime": {
+          "lib/net45/Inflector.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/3.1.0": {
         "type": "package",
         "compile": {
@@ -157,6 +166,7 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "Dapper": "2.0.90",
+          "Inflector": "1.0.0",
           "System.Data.SqlClient": "4.8.2"
         },
         "compile": {
@@ -185,6 +195,21 @@
         "lib/net5.0/Dapper.xml",
         "lib/netstandard2.0/Dapper.dll",
         "lib/netstandard2.0/Dapper.xml"
+      ]
+    },
+    "Inflector/1.0.0": {
+      "sha512": "sTHSvP1KMbAM2jTjqo02zn4nkMd3Mfj76H9Ikyko9bmO6BHblkIQOKIwJwQSKurgpiczBlcirWnbFM/n/8XiiQ==",
+      "type": "package",
+      "path": "inflector/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "inflector.1.0.0.nupkg.sha512",
+        "inflector.nuspec",
+        "lib/net35/Inflector.dll",
+        "lib/net40/Inflector.dll",
+        "lib/net45/Inflector.dll",
+        "lib/winrt45/Inflector.dll"
       ]
     },
     "Microsoft.NETCore.Platforms/3.1.0": {
@@ -634,5 +659,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Inflector 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Inflector",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

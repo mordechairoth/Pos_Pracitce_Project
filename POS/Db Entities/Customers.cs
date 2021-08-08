@@ -13,6 +13,7 @@ namespace POS.DbEntities
             CustomerAccounts = new HashSet<CustomerAccounts>();
         }
 
+        [NotMappedWrite]
         public int CustomerId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
@@ -22,10 +23,17 @@ namespace POS.DbEntities
         public string City { get; set; }
         public string State { get; set; }
         public string Zip { get; set; }
+
+        [NotMappedWrite]
         public DateTime CreatedOn { get; set; }
+
+        [NotMappedWrite]
         public DateTime UpdatedOn { get; set; }
+
+        [NotMappedWrite]
         public bool IsDeleted { get; set; }
 
+        [NotMappedWrite]
         public virtual ICollection<CustomerAccounts> CustomerAccounts { get; set; }
     }
 }

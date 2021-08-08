@@ -14,17 +14,30 @@ namespace POS.DbEntities
             CustomerAccountPayments = new HashSet<CustomerAccountPayments>();
         }
 
+        [NotMappedWrite]
         public int CustomerAccountId { get; set; }
         public int CustomerId { get; set; }
         public string AccountNumber { get; set; }
         public string PhoneNumber { get; set; }
         public decimal Credit { get; set; }
+
+        [NotMappedWrite]
         public DateTime CreatedOn { get; set; }
+
+        [NotMappedWrite]
         public DateTime UpdatedOn { get; set; }
+
+        [NotMappedWrite]
         public bool IsDeleted { get; set; }
 
+        [NotMappedWrite]
+
         public virtual Customers Customer { get; set; }
+
+        [NotMappedWrite]
         public virtual ICollection<CustomerAccountOrders> CustomerAccountOrders { get; set; }
+
+        [NotMappedWrite]
         public virtual ICollection<CustomerAccountPayments> CustomerAccountPayments { get; set; }
     }
 }

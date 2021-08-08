@@ -8,14 +8,23 @@ namespace POS.DbEntities
 {
     public partial class CustomerAccountPayments
     {
+        [NotMappedWrite]
         public int CustomerAccountPaymentId { get; set; }
         public int CustomerAccountId { get; set; }
         public decimal PaymentAmount { get; set; }
+
         public DateTime PaymentDate { get; set; }
+
+        [NotMappedWrite]
         public DateTime CreatedOn { get; set; }
+
+        [NotMappedWrite]
         public DateTime UpdatedOn { get; set; }
+
+        [NotMappedWrite]
         public bool IsDeleted { get; set; }
 
+        [NotMappedWrite]
         public virtual CustomerAccounts CustomerAccount { get; set; }
     }
 }

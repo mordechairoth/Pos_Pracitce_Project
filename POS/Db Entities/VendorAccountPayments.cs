@@ -6,16 +6,24 @@ using System.Collections.Generic;
 
 namespace POS.DbEntities
 {
-    internal partial class VendorAccountPayments
+    public partial class VendorAccountPayments
     {
+        [NotMappedWrite]
         public int VendorAccountPaymentId { get; set; }
         public int VendorAccountId { get; set; }
         public decimal PaymentAmount { get; set; }
         public decimal PaymentDate { get; set; }
+
+        [NotMappedWrite]
         public DateTime CreatedOn { get; set; }
+
+        [NotMappedWrite]
         public DateTime UpdatedOn { get; set; }
+
+        [NotMappedWrite]
         public bool IsDeleted { get; set; }
 
+        [NotMappedWrite]
         public virtual Vendors VendorAccount { get; set; }
     }
 }

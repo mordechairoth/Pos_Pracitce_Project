@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Tx1WL78DRCtZz5xXbDLwX8tZEebMa9hKiivyNdtcJjJBSW43ALha295N6R49wYlRbjtFVkYXj3XduKL4Ucd/IA==",
+  "dgSpecHash": "Ne5qxGWy37jIxie4jpCSX9aeyv5BKHC6kbXFwElzuf3K3neCtCoOzG44SGqDo2nxfBoqN6vFiTt3i9GpmWFNVw==",
   "success": true,
   "projectFilePath": "C:\\Users\\morde\\source\\repos\\POS\\WinFormsUI\\WinFormsUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\morde\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
+    "C:\\Users\\morde\\.nuget\\packages\\inflector\\1.0.0\\inflector.1.0.0.nupkg.sha512",
     "C:\\Users\\morde\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\morde\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\morde\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
@@ -16,5 +17,16 @@
     "C:\\Users\\morde\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
     "C:\\Users\\morde\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Inflector 1.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "Inflector",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

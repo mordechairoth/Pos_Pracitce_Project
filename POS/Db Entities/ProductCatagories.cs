@@ -13,13 +13,21 @@ namespace POS.DbEntities
             Products = new HashSet<Products>();
         }
 
+        [NotMappedWrite]
         public int ProductCatagoryId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
+
+        [NotMappedWrite]
         public DateTime CreatedOn { get; set; }
+
+        [NotMappedWrite]
         public DateTime? UpdatedOn { get; set; }
+
+        [NotMappedWrite]
         public bool IsDeleted { get; set; }
 
+        [NotMappedWrite]
         public virtual ICollection<Products> Products { get; set; }
     }
 }

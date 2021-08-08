@@ -13,16 +13,27 @@ namespace POS.DbEntities
             CustomerAccountOrderItems = new HashSet<CustomerAccountOrderItems>();
         }
 
+
+
         public int CustomerAccountOrderId { get; set; }
         public int CustomerAccountId { get; set; }
         public string OrderNumber { get; set; }
         public DateTime OrderDate { get; set; }
         public decimal OrderTotal { get; set; }
+
+        [NotMappedWrite]
         public DateTime CreatedOn { get; set; }
+
+        [NotMappedWrite]
         public DateTime UpdatedOn { get; set; }
+
+        [NotMappedWrite]
         public bool IsDeleted { get; set; }
 
+        [NotMappedWrite]
         public virtual CustomerAccounts CustomerAccount { get; set; }
+
+        [NotMappedWrite]
         public virtual ICollection<CustomerAccountOrderItems> CustomerAccountOrderItems { get; set; }
     }
 }

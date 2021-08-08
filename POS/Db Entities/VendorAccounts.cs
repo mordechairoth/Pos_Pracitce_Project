@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace POS.DbEntities
 {
-    internal partial class VendorAccounts
+    public partial class VendorAccounts
     {
         public VendorAccounts()
         {
@@ -14,18 +14,30 @@ namespace POS.DbEntities
             VendorAccountPayments = new HashSet<VendorAccountPayments>();
         }
 
+        [NotMappedWrite]
         public int VendorAccountId { get; set; }
         public int VendorId { get; set; }
         public string AccountName { get; set; }
         public string AccountNumber { get; set; }
         public decimal CreditAmount { get; set; }
         public string Email { get; set; }
+
+        [NotMappedWrite]
         public DateTime CreatedOn { get; set; }
+
+        [NotMappedWrite]
         public DateTime UpdatedOn { get; set; }
+
+        [NotMappedWrite]
         public bool IsDeleted { get; set; }
 
+        [NotMappedWrite]
         public virtual Vendors Vendor { get; set; }
+
+        [NotMappedWrite]
         public virtual ICollection<VendorAccountOrders> VendorAccountOrders { get; set; }
+
+        [NotMappedWrite]
         public virtual ICollection<VendorAccountPayments> VendorAccountPayments { get; set; }
     }
 }

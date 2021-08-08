@@ -6,23 +6,34 @@ using System.Collections.Generic;
 
 namespace POS.DbEntities
 {
-    internal partial class VendorAccountOrders
+    public partial class VendorAccountOrders
     {
         public VendorAccountOrders()
         {
             VendorAccountOrderItems = new HashSet<VendorAccountOrderItems>();
         }
 
+        [NotMappedWrite]
         public int VendorAccountOrderId { get; set; }
         public int VendorAccountId { get; set; }
         public decimal OrderPrice { get; set; }
         public DateTime? OrderArrivedOn { get; set; }
+
         public DateTime OrderPlacedOn { get; set; }
+
+        [NotMappedWrite]
         public DateTime CreatedOn { get; set; }
+
+        [NotMappedWrite]
         public DateTime UpdatedOn { get; set; }
+
+        [NotMappedWrite]
         public bool IsDeleted { get; set; }
 
+        [NotMappedWrite]
         public virtual Vendors VendorAccount { get; set; }
+
+        [NotMappedWrite]
         public virtual ICollection<VendorAccountOrderItems> VendorAccountOrderItems { get; set; }
     }
 }

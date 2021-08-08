@@ -6,8 +6,9 @@ using System.Collections.Generic;
 
 namespace POS.DbEntities
 {
-    internal partial class VendorAccountOrderItems
+    public partial class VendorAccountOrderItems
     {
+        [NotMappedWrite]
         public int VendorAccountOrderItemId { get; set; }
         public int ProductId { get; set; }
         public int VendorAccountOrderId { get; set; }
@@ -15,10 +16,17 @@ namespace POS.DbEntities
         public decimal? BuyingPricePerUnit { get; set; }
         public decimal TotalBuyingPrice { get; set; }
         public bool IsSoldByPound { get; set; }
+
+        [NotMappedWrite]
         public DateTime CreatedOn { get; set; }
+
+        [NotMappedWrite]
         public DateTime UpdatedOn { get; set; }
+
+        [NotMappedWrite]
         public bool IsDeleted { get; set; }
 
+        [NotMappedWrite]
         public virtual VendorAccountOrders VendorAccountOrder { get; set; }
     }
 }

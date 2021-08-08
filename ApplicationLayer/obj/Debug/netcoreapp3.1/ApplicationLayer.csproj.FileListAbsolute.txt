@@ -22,3 +22,4 @@ C:\Users\morde\source\repos\POS\ApplicationLayer\obj\Debug\netcoreapp3.1\Applica
 C:\Users\morde\source\repos\POS\ApplicationLayer\obj\Debug\netcoreapp3.1\ApplicationLayer.dll
 C:\Users\morde\source\repos\POS\ApplicationLayer\obj\Debug\netcoreapp3.1\ApplicationLayer.pdb
 C:\Users\morde\source\repos\POS\ApplicationLayer\obj\Debug\netcoreapp3.1\ApplicationLayer.genruntimeconfig.cache
+C:\Users\morde\source\repos\POS\ApplicationLayer\bin\Debug\netcoreapp3.1\Inflector.dll

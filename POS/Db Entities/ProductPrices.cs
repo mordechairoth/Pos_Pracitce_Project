@@ -8,16 +8,24 @@ namespace POS.DbEntities
 {
     public partial class ProductPrices
     {
+        [NotMappedWrite]
         public int ProductPriceId { get; set; }
         public int ProductId { get; set; }
         public decimal UnitPrice { get; set; }
         public decimal? BulkPrice { get; set; }
         public int? BulkAmount { get; set; }
         public bool SoldByPound { get; set; }
+
+        [NotMappedWrite]
         public DateTime CreatedOn { get; set; }
+
+        [NotMappedWrite]
         public DateTime UpdatedOn { get; set; }
+
+        [NotMappedWrite]
         public bool IsDeleted { get; set; }
 
+        [NotMappedWrite]
         public virtual Products ProductPrice { get; set; }
     }
 }
