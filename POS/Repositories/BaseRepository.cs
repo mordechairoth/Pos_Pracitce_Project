@@ -8,7 +8,7 @@ using Inflector;
 
 namespace POS.Repositories
 {
-    public abstract class BaseRepository<TEntityModel, TViewModel> where TEntityModel : new() where TViewModel : new()
+    public abstract class BaseRepository<TEntityModel, TViewModel> : IRepository<TViewModel> where TEntityModel : new() where TViewModel : new()
     {
 
         public IEnumerable<TViewModel> All()

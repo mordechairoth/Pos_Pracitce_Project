@@ -25,8 +25,8 @@ namespace WinFormsUI
             _vendorVms = VendorQueryHelper.GetAllVendors();
             vendorComboBox.Items.AddRange(_vendorVms.Select(x => x.Name).ToArray());
             vendorComboBox.Items.Add("Add New Vendor...");
-            _vendorAccountHandler.NewVendorAccountSaved += (sender, e) => { NewVendorAccountSavedEventHandler?.Invoke(sender, e); };
-            _vendorAccountHandler.NewVendorAccountSaved += (sender, e) => { MessageBox.Show("Vendor Account Saved!");};
+            _vendorAccountHandler.NewEntitySavedEventHandler += (sender, e) => { NewVendorAccountSavedEventHandler?.Invoke(sender, e); };
+            _vendorAccountHandler.NewEntitySavedEventHandler += (sender, e) => { MessageBox.Show("Vendor Account Saved!");};
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -42,19 +42,19 @@ namespace WinFormsUI
 
         private void accountNameTextBox_TextChanged(object sender, EventArgs e)
         {
-            _vendorAccountHandler.VendorAccount.AccountName = accountNameTextBox.Text;
+            _vendorAccountHandler.Entity.AccountName = accountNameTextBox.Text;
         }
 
         private void emailTextBox_TextChanged(object sender, EventArgs e)
         {
-            _vendorAccountHandler.VendorAccount.Email = emailTextBox.Text;
+            _vendorAccountHandler.Entity.Email = emailTextBox.Text;
         }
 
         private void vendorComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(vendorComboBox.SelectedIndex < vendorComboBox.Items.Count - 1)
             {
-                _vendorAccountHandler.VendorAccount.VendorId = _vendorVms.ElementAt(vendorComboBox.SelectedIndex).VendorId;
+                _vendorAccountHandler.Entity.VendorId = _vendorVms.ElementAt(vendorComboBox.SelectedIndex).VendorId;
             }
             else
             {

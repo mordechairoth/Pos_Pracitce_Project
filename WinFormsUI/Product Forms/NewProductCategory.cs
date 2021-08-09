@@ -12,8 +12,8 @@ namespace WinFormsUI
         {
             InitializeComponent();
             addCategoryHandler = new NewProductCategoryHandler();
-            addCategoryHandler.NewProductSaved += (sender, args) => { NewProductCatecorySaved?.Invoke(sender, args); };
-            addCategoryHandler.NewProductSaved += (sender, args) => { MessageBox.Show("Saved!"); };
+            addCategoryHandler.NewEntitySavedEventHandler += (sender, args) => { NewProductCatecorySaved?.Invoke(sender, args); };
+            addCategoryHandler.NewEntitySavedEventHandler += (sender, args) => { MessageBox.Show("Saved!"); };
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -25,12 +25,12 @@ namespace WinFormsUI
 
         private void categoryNameTextBox_TextChanged(object sender, EventArgs e)
         {
-            addCategoryHandler.ProductCategory.Name = categoryNameTextBox.Text;
+            addCategoryHandler.Entity.Name = categoryNameTextBox.Text;
         }
 
         private void categoryDescriptionTextBox_TextChanged(object sender, EventArgs e)
         {
-            addCategoryHandler.ProductCategory.Description = categoryDescriptionTextBox.Text;   
+            addCategoryHandler.Entity.Description = categoryDescriptionTextBox.Text;   
         }
 
         private void cancelButton_Click(object sender, EventArgs e)

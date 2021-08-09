@@ -17,58 +17,58 @@ namespace WinFormsUI
         {
             InitializeComponent();
             newCompanyHandler = new NewCompanyHandler();
-            newCompanyHandler.NewCompanySavedEventHandler += (sender, args) => { NewCompanySavedEventHandler?.Invoke(sender, args); };
-            newCompanyHandler.NewCompanySavedEventHandler += (sender, args) => { MessageBox.Show("Saved!");};
+            newCompanyHandler.NewEntitySavedEventHandler += (sender, args) => { NewCompanySavedEventHandler?.Invoke(sender, args); };
+            newCompanyHandler.NewEntitySavedEventHandler += (sender, args) => { MessageBox.Show("Saved!");};
         }
 
         private void companyNameTextBox_TextChanged(object sender, EventArgs e)
         {
-            newCompanyHandler.Company.Name = companyNameTextBox.Text;
+            newCompanyHandler.Entity.Name = companyNameTextBox.Text;
         }
 
         private void companyDescriptionTextBox_TextChanged(object sender, EventArgs e)
         {
-            newCompanyHandler.Company.Description = companyDescriptionTextBox.Text;
+            newCompanyHandler.Entity.Description = companyDescriptionTextBox.Text;
         }
 
         private void addressTextBox_TextChanged(object sender, EventArgs e)
         {
-            newCompanyHandler.Company.Address = addressTextBox.Text;
+            newCompanyHandler.Entity.Address = addressTextBox.Text;
         }
 
         private void address2TextBox_TextChanged(object sender, EventArgs e)
         {
-            newCompanyHandler.Company.Address2 = address2TextBox.Text;
+            newCompanyHandler.Entity.Address2 = address2TextBox.Text;
         }
 
         private void cityTextBox_TextChanged(object sender, EventArgs e)
         {
-            newCompanyHandler.Company.City = cityTextBox.Text;
+            newCompanyHandler.Entity.City = cityTextBox.Text;
         }
 
         private void stateTextBox_TextChanged(object sender, EventArgs e)
         {
-            newCompanyHandler.Company.State = stateTextBox.Text;
+            newCompanyHandler.Entity.State = stateTextBox.Text;
         }
 
         private void zipTextBox_TextChanged(object sender, EventArgs e)
         {
-            newCompanyHandler.Company.Zip = zipTextBox.Text;
+            newCompanyHandler.Entity.Zip = zipTextBox.Text;
         }
 
         private void phoneTextBox_TextChanged(object sender, EventArgs e)
         {
-            newCompanyHandler.Company.Phone = phoneTextBox.Text;
+            newCompanyHandler.Entity.Phone = phoneTextBox.Text;
         }
 
         private void phoneExtensionTextBox_TextChanged(object sender, EventArgs e)
         {
-            newCompanyHandler.Company.PhoneExtension = phoneExtensionTextBox.Text;
+            newCompanyHandler.Entity.PhoneExtension = phoneExtensionTextBox.Text;
         }
 
         private void emailTextBox_TextChanged(object sender, EventArgs e)
         {
-            newCompanyHandler.Company.Email = emailTextBox.Text;
+            newCompanyHandler.Entity.Email = emailTextBox.Text;
         }
 
         private void cancelButton_Click(object sender, EventArgs e)

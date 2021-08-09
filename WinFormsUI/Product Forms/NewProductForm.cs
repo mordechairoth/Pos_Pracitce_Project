@@ -27,18 +27,18 @@ namespace WinFormsUI
             companyComboBox.Items.Add("Add New Company...");
 
             newProductHandler = new NewProductHandler();
-            newProductHandler.NewProductsSavedEventHandler += (sender, args) => { NewProductSavedEventHandler?.Invoke(sender, args); };
-            newProductHandler.NewProductsSavedEventHandler += (sender, args) => { MessageBox.Show($"Product {((NewProductHandler)sender).Product.Name} Saved!");};
+            newProductHandler.NewEntitySavedEventHandler += (sender, args) => { NewProductSavedEventHandler?.Invoke(sender, args); };
+            newProductHandler.NewEntitySavedEventHandler += (sender, args) => { MessageBox.Show($"Product {((NewProductHandler)sender).Entity.Name} Saved!");};
         }
 
         private void productNameTextBox_TextChanged(object sender, EventArgs e)
         {
-            newProductHandler.Product.Name = productNameTextBox.Text;
+            newProductHandler.Entity.Name = productNameTextBox.Text;
         }
 
         private void productDescriptionTextBox_TextChanged(object sender, EventArgs e)
         {
-            newProductHandler.Product.Description = productDescriptionTextBox.Text;
+            newProductHandler.Entity.Description = productDescriptionTextBox.Text;
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
@@ -58,7 +58,7 @@ namespace WinFormsUI
         {
             if (categoryComboBox.SelectedIndex < categoryComboBox.Items.Count - 1)
             {
-                newProductHandler.Product.ProductCatagoryId = _productCategoryVms.ElementAt(categoryComboBox.SelectedIndex).ProductCatagoryId;
+                newProductHandler.Entity.ProductCatagoryId = _productCategoryVms.ElementAt(categoryComboBox.SelectedIndex).ProductCatagoryId;
             }
             else
             {
@@ -72,7 +72,7 @@ namespace WinFormsUI
         {
             if (companyComboBox.SelectedIndex < companyComboBox.Items.Count - 1)
             {
-                newProductHandler.Product.CompanyId = _companyVms.ElementAt(companyComboBox.SelectedIndex).CompanyId;
+                newProductHandler.Entity.CompanyId = _companyVms.ElementAt(companyComboBox.SelectedIndex).CompanyId;
             }
             else
             {
@@ -84,7 +84,7 @@ namespace WinFormsUI
 
         private void barCodeTextBox_TextChanged(object sender, EventArgs e)
         {
-            newProductHandler.Product.BarCode = barCodeTextBox.Text;
+            newProductHandler.Entity.BarCode = barCodeTextBox.Text;
         }
     }
 }

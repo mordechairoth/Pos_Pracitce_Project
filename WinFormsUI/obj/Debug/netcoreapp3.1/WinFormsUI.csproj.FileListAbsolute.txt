@@ -35,3 +35,4 @@ C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.Ne
 C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.NewProductCategory.resources
 C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.NewProductForm.resources
 C:\Users\morde\source\repos\POS\WinFormsUI\bin\Debug\netcoreapp3.1\Inflector.dll
+C:\Users\morde\source\repos\POS\WinFormsUI\obj\Debug\netcoreapp3.1\WinFormsUI.Vendor_Forms.AddOrderForm.resources
